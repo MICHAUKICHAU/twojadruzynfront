@@ -18,6 +18,10 @@ const appRoutes: Routes = [
     pathMatch:'full'
   },
   {
+    path: 'results',
+    component: EventComponent,
+  },
+  {
     path: 'feedback',
     component: FeedbackComponent
   },

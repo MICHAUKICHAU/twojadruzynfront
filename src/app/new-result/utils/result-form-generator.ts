@@ -14,6 +14,7 @@ export class ResultFormGenerator {
             [ResultControlNames.STADIUM_NAME]: new FormControl('', Validators.required),
             [ResultControlNames.CITY]: new FormControl('', Validators.required),
             [ResultControlNames.COUNTRY]: new FormControl('', Validators.required),
+            [ResultControlNames.MATCH_DATE]: new FormControl('', Validators.required),
         })
 
         return formGroup;

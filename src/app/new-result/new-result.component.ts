@@ -23,8 +23,8 @@ export class NewResultComponent implements OnInit {
   resultFormGroup: FormGroup;
 
   async ngOnInit() {
-    await this.initTeamList();
     this.resultFormGroup = ResultFormGenerator.generateNewResultFormGroup();
+    await this.initTeamList();
   }
 
   addEventResult() {
@@ -42,7 +42,6 @@ export class NewResultComponent implements OnInit {
     this.apiService.getAllTeams().subscribe(
       res => {
         this.teamList = res;
-        console.log(res);
       }, err => {
         alert("Błąd podczas zapisywania rezultatów")
       }

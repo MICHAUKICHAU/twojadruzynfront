@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from '../common/model/event';
+import { ApiService } from '../common/api/api.service';
 
 @Component({
   selector: 'event-results',
@@ -6,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  eventResultList: Event[];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.initEventResultList();
   }
 
+  initEventResultList(){
+    this.apiService.getAllEvents().subscribe(
+      res => {
+        this.eventResultList=res;
+      }, err => {
+        alert("Błąd podczas pobierania rezultatów")
+      }
+    )
+  }
 }

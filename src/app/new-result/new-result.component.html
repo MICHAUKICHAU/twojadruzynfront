@@ -4,36 +4,36 @@
     <div class="col-md-6">
       <form [formGroup]="resultFormGroup" class="newR-form" (ngSubmit)="addEventResult()">
         <div class="form-group">
-          <label for="'myTeam'">Drużyna gospodarzy</label>
-          <select type="text" id="'myTeam'" class="form-control" formControlName="'myTeam'">
-            <option *ngFor="let team of teamList" [ngValue]="team" >{{team}}</option>
+          <label for="myTeam">Drużyna gospodarzy</label>
+          <select type="text" id="myTeam" class="form-control" [formControl]="myTeam">
+            <option *ngFor="let team of teamList" [ngValue]="team" >{{team.name}}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="'oppositeTeam'">Drużyna przeciwna</label>
+          <label for="oppositeTeam">Drużyna przeciwna</label>
 
-          <select type="text" id="'oppositeTeam'" class="form-control" formControlName="'oppositeTeam'">
-            <option *ngFor="let team of teamList" [ngValue]="team">{{team}}</option>
+          <select type="text" id="oppositeTeam" class="form-control" [formControl]="oppositeTeam">
+            <option *ngFor="let team of teamList" [ngValue]="team">{{team.name}}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="'matchDate'"> Data meczu</label>
-          <input type="date" id="'matchDate'" class="form-control" formControlName="matchDate" />
+          <label for="matchDate"> Data meczu</label>
+          <input type="date" id="matchDate" class="form-control" [formControl]="matchDate" />
         </div>
 
 
         <div class="form-group-row">
-          <label for="'myTeamScores'" class="col-sm-2 col-form-label"> Punkty gospodarzy</label>
+          <label for="myTeamScores" class="col-sm-2 col-form-label"> Punkty gospodarzy</label>
           <div class="col-sm-10">
-            <input type="number" id="'myTeamScores'" formcontrolName="'myTeamScores'">
+            <input type="number" id="myTeamScores" [formControl]="'myTeamScores'">
           </div>
 
-          <label for="'oppositeTeamScores'" class="col-sm-2 col-form-label"> Punkty przeciwników</label>
+          <label for="oppositeTeamScores" class="col-sm-2 col-form-label"> Punkty przeciwników</label>
           <div class="col-sm-10">
-            <input type="number" id="'oppositeTeamScores'"
-              formcontrolName="'oppositeTeamScores'">
+            <input type="number" id="oppositeTeamScores"
+              [formControl]="oppositeTeamScores">
           </div>
         </div>
 
