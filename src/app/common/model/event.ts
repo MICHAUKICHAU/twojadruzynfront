@@ -6,7 +6,6 @@ export class Event {
     myTeamScores?:number;
     oppositeTeam?: Team;
     oppositeTeamScores?: number;
-    winner: Team;
     refereeName?: string;
     stadiumName?: string;
     country: string;

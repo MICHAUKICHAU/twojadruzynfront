@@ -61,8 +61,8 @@
             required minlength="10">
           </textarea>
           <div *ngIf="f.submitted && content.invalid" class="invalid-input">
-            <div *ngIf="content.errors?.required"> Email nie może być pusty</div>
-            <div *ngIf="content.errors?.minlength"> Wymaganych jest conajmniej 10 znaków</div>
+            <div *ngIf="content.errors?.required">Email nie może być pusty</div>
+            <div *ngIf="content.errors?.minlength">Wymaganych jest conajmniej 10 znaków</div>
           </div>
         </div>
         <button type="submit" class="btn btn-info pull-right">

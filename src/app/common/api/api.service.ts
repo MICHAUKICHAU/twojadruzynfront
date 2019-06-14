@@ -15,7 +15,7 @@ export class ApiService {
 
   private  GET_ALL_TEAMS = `${this.BASE_URL}\\team\\`;
 
-  private  ADD_RESULT = `${this.BASE_URL}\\event/add\\`;
+  private  ADD_RESULT = `${this.BASE_URL}\\event/save\\`;
 
   constructor(private http: HttpClient) { 
   }
@@ -29,7 +29,7 @@ export class ApiService {
   }
 
   public addResult(result: Event): Observable<any>{
-    return this.http.post<Event>(this.ADD_RESULT,event);
+    return this.http.post<Event>(this.ADD_RESULT,result);
   }
 
   public getAllTeams(): Observable<Team[]>{

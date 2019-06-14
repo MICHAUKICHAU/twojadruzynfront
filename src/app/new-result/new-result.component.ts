@@ -22,13 +22,14 @@ export class NewResultComponent implements OnInit {
 
   resultFormGroup: FormGroup;
 
-  async ngOnInit() {
+   ngOnInit() {
     this.resultFormGroup = ResultFormGenerator.generateNewResultFormGroup();
-    await this.initTeamList();
+    this.initTeamList();
   }
 
   addEventResult() {
     console.log(this.resultFormGroup.value);
+    
     this.apiService.addResult(this.resultFormGroup.getRawValue()).subscribe(
       res => {
         location.reload();
