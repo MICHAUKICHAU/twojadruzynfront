@@ -9,11 +9,12 @@ import { Team } from '../model/team';
   providedIn: 'root'
 })
 export class ApiService {
-  private BASE_URL = "http://localhost:8080/api";
+  private BASE_URL = "http://localhost:8080/api/";
   private  ALL_EVENTS_ENDPOINT = `${this.BASE_URL}\\event\\`;
   private  SEND_FEEDBACK_URL = `${this.BASE_URL}\\feedback/send\\`;
 
   private  GET_ALL_TEAMS = `${this.BASE_URL}\\team\\`;
+private ADD_TEAM = `${this.BASE_URL}\\team/save\\`;
 
   private  ADD_RESULT = `${this.BASE_URL}\\event/save\\`;
 
@@ -34,5 +35,9 @@ export class ApiService {
 
   public getAllTeams(): Observable<Team[]>{
     return this.http.get<Team[]>(this.GET_ALL_TEAMS);
+  }
+
+  public saveTeam(team: Team): Observable<any>{
+    return this.http.post<Team>(this.ADD_TEAM, team);
   }
 }

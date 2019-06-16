@@ -1,6 +1,6 @@
 import { Team } from "./team";
 
-export class Event {
+export interface Event {
     id: number;
     myTeam?: Team;
     myTeamScores?:number;

@@ -11,18 +11,24 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/results"> rezultaty</a>
+        <a class="nav-link" routerLink="/results">Rezultaty</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Dodaj mecz</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/newteam">Dodaj drużyne</a>
       </li>
       <li class="nav-item active dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Miesiące
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a *ngFor="let month of monthNames" class="dropdown-item" href="#"> {{month}}</a>
+          <a *ngFor="let month of monthNames" class="dropdown-item" href="#">{{month}}</a>
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/feedback"> Kontakt</a>
+        <a class="nav-link" routerLink="/feedback">Kontakt</a>
       </li>
       
     </ul>

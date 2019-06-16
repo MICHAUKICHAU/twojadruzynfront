@@ -18,28 +18,27 @@ export class NewResultComponent implements OnInit {
 
   resultControlNames = ResultControlNames;
 
-  constructor(private apiService: ApiService) { }
-
   resultFormGroup: FormGroup;
 
-   ngOnInit() {
+  constructor(private apiService: ApiService) { }
+
+
+  ngOnInit() {
     this.resultFormGroup = ResultFormGenerator.generateNewResultFormGroup();
     this.initTeamList();
   }
 
   addEventResult() {
-    console.log(this.resultFormGroup.value);
-    
-    this.apiService.addResult(this.resultFormGroup.getRawValue()).subscribe(
-      res => {
-        location.reload();
-      }, err => {
-        alert("Błąd podczas zapisywania rezultatów")
-      }
-    )
+      this.apiService.addResult(this.resultFormGroup.getRawValue()).subscribe(
+        res => {
+          location.reload();
+        }, err => {
+          alert("Błąd podczas zapisywania rezultatów")
+        }
+      )
   }
 
-  initTeamList() {  
+  initTeamList() {
     this.apiService.getAllTeams().subscribe(
       res => {
         this.teamList = res;

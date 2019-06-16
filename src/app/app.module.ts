@@ -10,6 +10,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { NewResultComponent } from './new-result/new-result.component';
 import { EventComponent } from './event-results/event-results.component';
+import { NewTeamComponent } from './new-team/new-team.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
     component: FeedbackComponent
   },
   {
+    path: 'newteam',
+    component: NewTeamComponent
+  },
+  {
     path: '**',
     component: NotfoundComponent
   }
@@ -39,6 +44,7 @@ const appRoutes: Routes = [
     NewResultComponent,
     FeedbackComponent,
     EventComponent,
+    NewTeamComponent,
   ],
   imports: [
     ReactiveFormsModule,
